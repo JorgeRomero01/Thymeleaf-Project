@@ -15,8 +15,14 @@
 <div class="container">
 	<h3>Employee Directory</h3>
 	<hr>
+	<a th:href= "@{/employees/showFormForAdd}"
+		class="btn btn-primary btn-sm mb-3">
 	
-	<table class="table table-bordered table-striped">
+		Add Employee
+	</a>
+	
+	<!--table table-bordered table-striped  -->
+	<table class="table table-striped table-dark table-hover">
 		<thead class="thead-dark">
 			<tr>
 				<th>First Name</th>
