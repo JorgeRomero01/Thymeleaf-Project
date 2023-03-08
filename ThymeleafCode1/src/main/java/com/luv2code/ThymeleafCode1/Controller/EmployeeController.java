@@ -10,6 +10,8 @@ import javax.annotation.PostConstruct;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -37,8 +39,13 @@ public class EmployeeController {
 		
 		Employee theEmployee = new Employee();
 		
-		theModel.addAttribute("employee",theEmployee);
+		theModel.addAttribute("employee", theEmployee);
 		
+		return "employees/employee-form";
+	}
+	
+	@PostMapping("/save")
+	public String saveEmployee(@ModelAttribute("employee") Employee theEmployee) {
 		return null;
 	}
 	
