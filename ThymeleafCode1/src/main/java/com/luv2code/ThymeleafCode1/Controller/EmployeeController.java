@@ -21,6 +21,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("/employees")
 public class EmployeeController {
 	
+//	<form:form action = "search" method = "GET">
+//	Search customer: <input type = "text" name = "theSearchName"/>
+//	<input type = "submit" value = "Search" class = "add-button"/>
+//</form:form>
 	private EmployeeService employeeService;
 	
 	public EmployeeController(EmployeeService theEmployeeService) {
@@ -67,7 +71,10 @@ public class EmployeeController {
 	
 	@GetMapping("/delete")
 	public String delete(@RequestParam("employeeId") int theId) {
-		return null;
+		//delete employee
+		employeeService.delete(theId);
+		
+		return "redirect:/employees/list";
 		
 	}
 }
